@@ -27,7 +27,9 @@ app.use("/new", jwtCheck, ErrorHandler, CreateRouter);
 app.use("/get", jwtCheck, ErrorHandler, ProxPiRouter);
 app.use("/update", jwtCheck, ErrorHandler, UpdateDataRouter);
 app.use("/proxpi", ApiRouter);
-
+app.get("/hey",(req,res)=>{
+  res.json({"Hi":"docker is working"})
+})
 app.listen(process.env.PORT || 8080, () => {
   console.log("ons");
 });

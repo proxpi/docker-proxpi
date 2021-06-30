@@ -5,12 +5,12 @@ import Main from "../components/Main";
 import NavBar from "../components/NavBar";
 import Pricing from "../components/Pricing";
 import Createnew from "../components/Createnew";
-
+import Footer from "../components/Footer";
 import axios from "axios";
 import ProxPiDashboard from "../components/ProxPiDashboard";
 
 export default () => {
-  axios.defaults.baseURL = "https://proxpiapi.herokuapp.com";
+  axios.defaults.baseURL = "http://localhost:8080";
   return (
     <Router>
       <div>
@@ -18,9 +18,11 @@ export default () => {
         <Switch>
           <Route exact path="/">
             <Main />
+            <Footer/>
           </Route>
           <Route exact path="/pricing">
             <Pricing />
+             <Footer/>
           </Route>
           <Route
             path="/dashboard"
@@ -34,6 +36,7 @@ export default () => {
             )}
           />
         </Switch>
+       
       </div>
     </Router>
   );

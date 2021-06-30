@@ -27,7 +27,7 @@ router.route("/proxpianalytics/:id").get(async (req, res) => {
     let resptimeavg = 0;
     let resptimetotal = 0;
     const ProxpiData = await db.get(req.params.id);
-
+    console.log("sdfsdf")
     //count total views
     Object.keys(ProxpiData.daily).map((data) => {
       totalviews += ProxpiData.daily[data] || 0;
